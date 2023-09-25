@@ -3,10 +3,10 @@
 }
 
 :root {
-  --left-bg-color: rgba(87, 84, 236, 0.7);
-  --right-bg-color: rgba(43, 43, 43, 0.8);
-  --left-btn-hover-color: rgba(87, 84, 236, 1);
-  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --left-bg-color: rgba(245, 40, 145, 0.5);
+  --right-bg-color: rgba(39, 245, 229, 0.5);
+  --left-btn-hover-color: rgba(245, 40, 145, 1);
+  --right-btn-hover-color: rgba(39, 245, 229, 1);
   --hover-width: 75%;
   --other-width: 25%;
   --speed: 1000ms;
@@ -23,13 +23,12 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #404646;
   color: #fff;
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-  white-space: nowrap;
 }
 
 .btn {
@@ -38,7 +37,7 @@ h1 {
   align-items: center;
   justify-content: center;
   left: 50%;
-  top: 40%;
+  bottom: 10%;
   transform: translateX(-50%);
   text-decoration: none;
   color: #fff;
@@ -75,10 +74,9 @@ h1 {
 }
 
 .split.left {
-  left: 0;
   background: url("../expanding-cards/assets/imagen-2.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position: right;
 }
 
 .split.left::before {
@@ -93,7 +91,6 @@ h1 {
   right: 0;
   background: url("../expanding-cards/assets/imagen-4.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .split.right::before {
@@ -128,13 +125,21 @@ h1 {
 }
 
 @media (max-width: 800px) {
-  h1 {
-    font-size: 2rem;
-    top: 30%;
+  :root {
+    --hover-width: 100%;
+    --other-width: 0%;
+  }
+
+  .split.left {
+    background-position: left;
+  }
+
+  .split.right {
+    background-position: right;
   }
 
   .btn {
-    padding: 1.2rem;
-    width: 12rem;
+    padding: 0.5rem;
+    width: 8rem;
   }
 }
